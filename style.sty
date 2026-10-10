@@ -1,0 +1,91 @@
+\ProvidesPackage{style}
+%Packages
+\usepackage{ntheorem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[separate-uncertainty = true]{siunitx}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{multicol}
+\usepackage[margin=2.5cm]{geometry}
+\graphicspath{ {./images/} }
+
+
+%Symbol declarations
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\eval{.}{|}
+\DeclarePairedDelimiter\ket{|}{\rangle}
+\DeclarePairedDelimiter\gra{\langle}{|}
+
+\newcommand{\degr}{^\circ}
+\newcommand{\deriv}[2]{\frac{\text{d} #1} {\text{d} #2}}
+\newcommand{\pderiv}[2]{\frac{\partial #1} {\partial #2}}
+\newcommand{\note}[1]{\begin{nb} #1 \end{nb}}
+\newcommand{\norm}[1]{\abs {\abs {#1}}}
+\newcommand{\proj}[1]{\text{proj}_{#1}}
+\newcommand{\phline}{\\~\\ \hline \\}
+\newcommand{\real}{\text{Re}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\const}{\text{Constant}}
+\newcommand{\nth}{$n^{\text{th}}$ }
+\newcommand{\erf}{\text{erf}}
+\newcommand{\erfc}{\text{erfc}}
+
+\DeclareSIUnit\angstrom{\text {Å}}
+
+%Enviroments for highlighting text in notes. 
+\newmdenv[
+    backgroundcolor = red!10,
+    roundcorner = 5pt,
+    innertopmargin = 5pt,
+    innerbottommargin=5pt
+]{nb}
+
+\newmdenv[
+    backgroundcolor = gray!10,
+    roundcorner = 5pt,
+    innertopmargin = 5pt,
+    innerbottommargin=5pt
+]{hi}
+
+\mdfdefinestyle{theoremstyle}{
+    backgroundcolor = gray!10,
+    roundcorner = 5pt,
+    innertopmargin = 5pt,
+    innerbottommargin=5pt}
+
+\mdtheorem[style=theoremstyle]{example}{Example}
+
+\mdfdefinestyle{equationstyle}{
+    backgroundcolor = blue!10,
+    roundcorner = 5pt,
+    innertopmargin = 5pt,
+    innerbottommargin=5pt}
+
+\mdtheorem[style=equationstyle]{eq}{Important Equation}
+
+\mdfdefinestyle{theoremstyle2}{
+    backgroundcolor = red!10,
+    roundcorner = 5pt,
+    innertopmargin = 5pt,
+    innerbottommargin=5pt}
+\mdtheorem[style=theoremstyle2]{theorem}{Theorem}
+
+% Easy image insert
+%   use as \img{imagename}{caption}{label}
+%   will insert image with with 70% of textwidth
+%   change below for other width
+\newcommand{\img}[4]{
+    \begin{figure}[!ht]
+        \centering
+            \includegraphics[width=#4\textwidth]{#1}
+        \caption{#2}
+        \label{fig:#3}
+    \end{figure}
+}
+
+%Courtesy of Charlie @ https://stackoverflow.com/a/955016, modified to include argument for img width.
+
+%\renewcommand\thesection{} %-- Removes the numbers infront of section headers.
