@@ -19,16 +19,43 @@
             Hall effect sensors are often used to measure the position or angle of something, for example a stick in a game controller, the rotation speed/postion of a motor's shaft or measuring current. Typically, magnets are mounted to one of the moving components and the sensor on the other side. If multiple magnets are used then the velocity of the object can be measured by maasuring the "bumpy" magnetic field. If the device itself can be calibrated or started from some known position then Hall effect sensors can be used to determine the position of the device to a comparitively high accuracy. \par
             As Hall effect sensors are solid state components they can often be used in areas were mechanical wear of a more traditional component may be a problem, or where there might be a physical disconnect from the sensor and what it's trying to measure.
     \section{Method}
+        \img{CircuitDiagram}{Circuit diagram of the apparatus}{circuitdiagram}{0.5}s
         \begin{enumerate}
             \item The apparatus was wired together. The voltmeter was chained in series with the top plug of the Hall effect waver, with the bottom of the wafer going back into the negative end of the power supply. The electromagnet was connected to the second power supply.
-            \item The sensor PSU was turned on and set to $\qty{0}{\V}$. The electromagnet PSU was set to $\qty{1}{\A}$. The values on the ammeter and voltmeter were recorded. 
+            \item The sensor PSU was turned on and set to $\qty{0}{\V}$. The electromagnet PSU was set to $\qty{1}{\A}$. 
+            \item The strength of the magnetic field inline with the sensor was recorded using a gaussmeter.
+            \item The hall sensor PSU was set to $\qty{4}{\mA}$. This value along with the voltage across the Hall sensor was recorded.
+            \item This was repeated 10 times until the amperage reached $\qty{40}{\mV}$.
+            \item The electomagnet PSU was set to $\qty{2}{\A}$ and the previous measurments repeated. The strenght of the magnetic field was measured.
+            \item The PSU was then set to $\qty{3}{\A}$ and the measurements were repeated again. The strenght of the magnetic field was measured.
         \end{enumerate}
     \section{Results}
         \begin{gather*}
             T = \qty{1}{\mm} \\
             R_H = \frac {V_H T}{I B} \\
-            R_{H(\qty{1}{\A})} = \frac {}
+            R_{H(\qty{1}{\A})} = \qty{0.8723}{\V\per\A} \cdot \frac {\qty{0.001}{\m}}{\qty{0.0739}{\T}} \\
+            R_{H (\qty{1}{\A})} = \qty{1.18E-2}{\C} \\~\\
+            R_{H(\qty{2}{\A})} = \qty{1.214}{\V\per\A} \cdot \frac {\qty{0.001}{\m}}{\qty{0.1215}{\T}} \\
+            R_{H (\qty{2}{\A})} =\qty{9.92E-3}{\C} \\~\\
+            R_{H(\qty{3}{\A})} = \qty{1.257}{\V\per\A} \cdot \frac {\qty{0.001}{\m}}{\qty{0.1505}{\T}} \\
+            R_{H(\qty{3}{\A})} = \qty{8.352E-3}{\C} \\~\\
+            R_{H \ AVG} = \frac {\qty{1.18E-2}{\C} + \qty{9.92E-3}{\C} + \qty{8.352E-3}{\C}} 3\\
+            = \qty{0.01004}{\C} \\
+            n = \frac {q}{R_H} \\
+            n = \frac 1 {\qty{1.602E-19}{\C}\cdot \qty{0.01004E-3}{\C}} = \num{6.212E20}
         \end{gather*}
+    \section{Error Analysis}
+        Multimeter error: $1\%$ \\
+        Gaussmeter error: $\pm \qty{0.01}{\mT}$ \\
+        Electromagnet PSU error: $\pm \qty{0.1}{\A}$ \\
+        \begin{gather*}
+            \Delta n = \num{6.212E20} \sqrt{0.01^2 + {\num{0.05}}^2 + 0.01^2} \\
+            \Delta n = \num{3.2E19}
+        \end{gather*}
+        This error could have been reduced if the gaussmeter was placed in a stand of it's own, allowing consistant, accurate measurements. 
+    \section{Conclusion}
+        The number of charge carriers within the hall effect sensor sucessfully determined by modulating the bias voltage while the sensor was held in a magnetic field. This value was found to be
+            \[n = \num{6.21(0.32)E20}\text{ Electrons}\]
     \section{References}
         \begin{enumerate}
             \item Edwin Hall, 1879, \emph{On a New Action of the Magnet on Electric Currents}, American Journal of Mathematics Vol. 2 No. 3
