@@ -9,7 +9,7 @@
         \subsection{Discovery}
             In 1879, based on work by André-Marie Ampére and James Maxwell, Edwin Hall investigated how magnetic fields interacted with an electrical current in a conductor. He proposed that 
                 \[E' \propto Mv\]
-            where $E' \equiv V$, $M \equiv \abs{\vec B}$ and "$v$ is the velocity of the electricity in the [object]" (E. H. Hall, 1879)\textsuperscript{[1]} (At the time of Hall's paper the electron had only been theorized and wasn't discovered until 1897) 
+            where $E' \equiv V$, $M \equiv \abs{\vec B}$ and "$v$ is the velocity of the electricity in the [object]" (E. H. Hall, 1879)\textsuperscript{[1]} (At the time of Hall's paper the electron had only been theorized and wasn't discovered until 1897). Later, the equation was found to be
                 \[V_H = \frac {I_x B_z}{n_e C_e t}\]
             where $I_x$ is the current through the conductor, $B_z$ is the magnetic field, $n_e$ is the number of electrons, $C_e$ is the charge of the electron and $t$ is the thickness of the material. (Manny Soltero, 2023)\textsuperscript{[2]}. The term $n_e C_e t$ represents the total charge density of the object. \par
             The Hall effect describes how electrons accumulate on one side the material in the presence of a magnetic field.
@@ -20,8 +20,15 @@
             As Hall effect sensors are solid state components they can often be used in areas were mechanical wear of a more traditional component may be a problem, or where there might be a physical disconnect from the sensor and what it's trying to measure.
     \section{Method}
         \begin{enumerate}
-            \item 
+            \item The apparatus was wired together. The voltmeter was chained in series with the top plug of the Hall effect waver, with the bottom of the wafer going back into the negative end of the power supply. The electromagnet was connected to the second power supply.
+            \item The sensor PSU was turned on and set to $\qty{0}{\V}$. The electromagnet PSU was set to $\qty{1}{\A}$. The values on the ammeter and voltmeter were recorded. 
         \end{enumerate}
+    \section{Results}
+        \begin{gather*}
+            T = \qty{1}{\mm} \\
+            R_H = \frac {V_H T}{I B} \\
+            R_{H(\qty{1}{\A})} = \frac {}
+        \end{gather*}
     \section{References}
         \begin{enumerate}
             \item Edwin Hall, 1879, \emph{On a New Action of the Magnet on Electric Currents}, American Journal of Mathematics Vol. 2 No. 3
