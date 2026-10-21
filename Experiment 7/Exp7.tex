@@ -9,16 +9,18 @@
         \subsection{Discovery}
             In 1879, based on work by André-Marie Ampére and James Maxwell, Edwin Hall investigated how magnetic fields interacted with an electrical current in a conductor. He proposed that 
                 \[E' \propto Mv\]
-            where $E' \equiv V$, $M \equiv \abs{\vec B}$ and "$v$ is the velocity of the electricity in the [object]" (E. H. Hall, 1879)$^{\text{[1]}}$ (At the time of Hall's paper the electron had only been theorized and wasn't discovered until ) 
+            where $E' \equiv V$, $M \equiv \abs{\vec B}$ and "$v$ is the velocity of the electricity in the [object]" (E. H. Hall, 1879)\textsuperscript{[1]} (At the time of Hall's paper the electron had only been theorized and wasn't discovered until 1897) 
                 \[V_H = \frac {I_x B_z}{n_e C_e t}\]
-            where $I_x$ is the current through the conductor, $B_z$ is the magnetic field, $n_e$ is the number of electrons, $C_e$ is the charge of the electron and $t$ is the thickness of the material.
+            where $I_x$ is the current through the conductor, $B_z$ is the magnetic field, $n_e$ is the number of electrons, $C_e$ is the charge of the electron and $t$ is the thickness of the material. (Manny Soltero, 2023)\textsuperscript{[2]}
 
         \subsection{Hall Effect Sensors}
-            Hall effect sensors typically combine a Hall element and an op-amp. The Hall element has a similar structure to a Wheatstone bridge
-            Hall effect sensors are often used to measure the position or angle of something, for example a stick in a game controller, the rotation speed or postion of a motor's shaft or measuring current without needing to be inserted directly into a given circuit.
+            Hall effect sensors typically combine a Hall element and an op-amp. The Hall element has a similar structure to a Wheatstone bridge (R. Wei et al, 2017)\textsuperscript{[3]}. The Hall voltage can be measured accross pins 1 and 3 when a bias voltage is applied between pins 2 and 4. If all of the resistors are not properly balanced the output voltage will be offset by some amount. In a larger IC the op-amp is used to amplify the voltage to levels that can be read by a computer. \par
+            Hall effect sensors are often used to measure the position or angle of something, for example a stick in a game controller, the rotation speed/postion of a motor's shaft or measuring current. Typically, magnets are mounted to one of the moving components and the sensor on the other side. If multiple magnets are used then the velocity of the object can be measured by maasuring the "bumpy" magnetic field. If the device itself can be calibrated or started from some known position then Hall effect sensors can be used to determine the position of the device to a comparitively high accuracy. \par
+            As Hall effect sensors are solid state they can often be used in areas were mechanical wear of a more traditional component may be a problem, or where there might be a physical disconnect from the sensor and what it's trying to measure.
     \section{References}
         \begin{enumerate}
             \item Edwin Hall, 1879, \emph{On a New Action of the Magnet on Electric Currents}, American Journal of Mathematics Vol. 2 No. 3
             \item Manny Soltero, 2023, \emph{What Is a Hall-effect Sensor?}, Texas Instruments technical article
+            \item Wei, Rongshan \& Guo, Shizhong \& Yang, Shanzhi, 2017, \emph{Low-Power CMOS Integrated Hall Switch Sensor}, Active and Passive Electronic Components. 2017. 1-9. 10.1155/2017/5375619. 
         \end{enumerate}
 \end{document}
