@@ -14,11 +14,51 @@
         was the condition for the  reflected x-rays to be detected, where $\lambda$ is the wavelength of the x-ray, $d$ is the seperation between the atoms and $\theta$ is the angle of reflection. \par
         More recently some of the assumption's that the original paper makes have been disputed as being ambiguous, particularily around the definition of the glancing angle. In 2025 physicist Pramode Bhattacharjee reformulated the relation to use the "unambiguous" angle of reflection instead:
            \[n \lambda = -2d \cos \phi_1\]
-        where $\phi_1$ is the unambiguous incidence angle.
+        where $\phi_1$ is the unambiguous incidence angle. Because this is a compatively new discovery, the apparatus doesn't have markings for the unambiguous angle, so the older method was used.
+    \section{Apparatus}
+        \begin{itemize}
+            \item TEL-X-OMETER Type 2580 with \begin{itemize}
+                \item X-ray source
+                \item Crystal sample
+                \item Geiger-Meyer type radiation detector
+                \item Angle scale
+            \end{itemize}
+            \item Philip Harris Digicounter
+        \end{itemize}
+    \section{Procedure}
+        The cable from the GM dectector was plugged into the "GM tube" port in the digicounter. The TEL-X-OMETER was closed and locked, before power was given to it. The tube voltage was set to $\qty{30}{\kV}$. The timer was set then the x-ray emmitter was enabled. Power was given to the digicounter. \\~\\
+        For every $1\degr$ (from $20 \degr$ to $115 \degr$), the count rate was measured using the digicounter. If the value seemed higher then it's neighbours the count rate was measured roughly every $10$ arcminutes in either direction. Any fine adjustments were done using the thumb wheel.
+    \section{Results}
+        Seperation of NaCl atoms:
+        \begin{gather*}
+            \lambda n = 2d \sin \theta \\
+            \lambda = \qty{0.138E-9}{\m}, \quad n = 1, \theta = \qty{0.584}{\radian} \\
+            d = \frac {\lambda n}{2\sin \theta} \\
+            d_1 = \qty{1.25E-10}{\m} \\
+            d_2 = \qty{2.47E-10}{\m} \\
+            d_3 = \qty{2.51E-10}{\m} \\
+            d_{avg} = \qty{2.08E-10}{\m}
+        \end{gather*}
+        Lattice constant of NaCl:
+        \begin{gather*}
+            \qty{6.41(0.41)E-10}{\m}
+        \end{gather*}
+    \section{Error analysis}
+       \begin{gather*}
+        \Delta 2\theta = \frac 1 6 \degr \\
+        \Delta R = 0.1 \text{Count}/s \\
+        \Delta d =  \qty{2.08E-10}{\m}\sqrt{\left(\frac {\frac 1 6 \degr}{20 \degr}\right)^2 + \left(\frac {0.1\text{Count}/s}{302\text{Count}/s}\right)^2} \\
+        \Delta d = \qty{1.73E-12}{\m}
+       \end{gather*} 
+    \section{Discussion}
+        The count wheel only had markings part-way around its surface. There were approximate peaks where the markings did not proplery line up with the main scale or where the markings were fully missing. If we were repeating the experiment we would use a digital angle scale with a higher perscison. The lattice constant accepted value found to have a lattice constant of $a = \qty{5.58E-10}{\m}$ and a $d = \qty{2.79E-10}{\m}$ [4], compared to our measured values of $a = \qty{6.41(0.41)E-10}{\m}$ and $d = \qty{2.08(0.017)E-10}{\m}$. The error in the seperation is likely caused by the missing units on the thumb dial.
+    \section{Conclusion}
+       By measuring the angle of refraction the values of the lattice constant and distance between atoms of $NaCl$ could be found. The value of d was found to be $d = \qty{2.08(0.017)E-10}{\m}$, which is outside the experimental error, likely due to some missing measurements on the thumb screw. The lattice constant was found to be $a = \qty{6.41(0.41)E-10}{\m}$, which is within the accepted value.
     \section{References}
         \begin{enumerate}
             \item William Henry Bragg, William Lawrence Bragg, 1913, \emph{The reflection of X-rays by crystals}, Proc. R. Soc. A1 July 1913
             \item  W. Friedrich, P. Knipping, M. Laue, presented by A. Sommerfeld 1912, \emph{Interference Phenomena for X-Rays, Theoretical section}, Proceedings of the Mathematical-Physical Class of the Royal Bavarian Academy of Sciences in Munich, Issue 2. English translation by J. J. Stezowski.
             \item Pramode Ranjan Bhattacharjee, \emph{Discovery of the lack of success of Bragg's law in respect of perfect quantification of the X-ray diffraction phenomenon,} Next Research, Volume 2, Issue 2, 2025, 100312, ISSN 3050-4759
+            \item Chemical Book, \emph{https://www.chemicalbook.com/article/sodium-chloride-crystal.htm}, 2023
         \end{enumerate}
 \end{document}
