@@ -1,0 +1,94 @@
+\documentclass{article}[12pt]
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc} % Should be Times New Roman adjacent, from https://tex.stackexchange.com/questions/33677/setting-font-family-for-the-whole-document
+\usepackage{mathptmx}
+\usepackage{moresize}
+\usepackage{setspace}
+\usepackage{float} 
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[separate-uncertainty = true]{siunitx}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{listings}
+
+\graphicspath{{./images/}}
+\pdfoutput=1
+\onehalfspacing
+
+\nonstopmode
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black!100!black},
+    urlcolor={black!100!black}
+}
+
+\sisetup{
+    number-unit-product=~
+    } % Taken from M\X's answer on https://tex.stackexchange.com/questions/160105/unit-spacing-with-siunitx-in-an-equation
+
+\newcommand{\uhref}[2]{\href{#1}{\underline{#2}}} % For directly linking to websites.
+\newcommand{\reference}[3]{(#2, #3)\textsuperscript{\ref{#1}}} % For doing Harvard style referencing. Label should go at the bottom, reference at value being referenced.
+\newcommand{\thlineA}{\hline ~ & ~ & ~ & ~ & ~ \\[-2ex] } % The values in the table get squished when using the regular hline, this adds a small bit of extra space at the top by adding a phantom row with negative bottom spacing.
+\newcommand{\thline}{\hline ~ & ~ & ~ & ~ \\[-2ex] }
+
+
+\begin{document}
+    \section*{Abstract}
+    \section{Introduction}
+        \subsection{Background}
+
+
+        \subsection{Theory}
+            
+
+    \section{Experiment}
+        \subsection{Apparatus}
+            \begin{itemize}
+
+            \end{itemize}
+
+        \subsection{Method}
+
+            \subsubsection{Part 1}
+
+
+            \subsubsection{Part 2}
+
+    \section{Results}
+        \begin{table}[!ht]
+            \centering
+            \begin{tabular}[center]{|c|c|c|c|}
+
+            \end{tabular}
+            \caption{Constants and accepted values}\label{constants}
+        \end{table}
+        \subsection{Part 1}
+
+        \subsection{Part 2}
+            
+        \subsection{Error Analysis}
+            \subsubsection{Quantitative}
+                
+            \subsubsection{Qualitative}
+            
+    \section{Discussion}
+       
+    \section{Conclusion}
+        
+    \addcontentsline{toc}{section}{Notes}
+    \section*{Notes}
+
+    \addcontentsline{toc}{section}{References}
+    \section*{References}
+    %https://tex.stackexchange.com/questions/42905/enumerated-list-with-square-brackets
+        \begin{enumerate}[label={[\arabic*]}]
+            \item
+        \end{enumerate}
+\end{document}

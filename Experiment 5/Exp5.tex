@@ -9,25 +9,58 @@
         To set up a Fabry-Pérot Interferometer and to determine the wavelength of a mercury lamp and the seperation of the sodium doublet.
     \section{Background}
         A Fabry-Pérot consists of two pieces of glass partially coated in a reflective material. The beam of light for analysis is passed through the back of one of the plates and is effectivey trapped between the two plates. At each of the points the light strikes the second mirror, some light is let through. \\
-        By placing a lens before and after the glass plates the light can be focused such that all the reflected rays from one source focus onto the same area. This will form an interferance pattern on a screen placed behind it. 
+        By placing a lens before and after the glass plates the light can be focused such that all the reflected rays from one source focus onto the same area. This will form an interferance pattern on a screen placed behind it. [1]
     \subsection{Applications}
         Fabry-Pérot interferometers are often used to measure the wavelength of a given light beam, by modulating the distance between the two plates. \\
         A version with the mirrors fixed in place, called an etalon, is often used in systems with frequency multiplexing to allow multiple channels to be sent over a single fibre optic cable both directions
     
         Accepted values:
         Calibration factor may not Applying
+    \subsection{Formulas}
+        For this experiment, the condition for interferance
+            \[m \lambda = 2d \cos \theta\]
+        is used extensively.
     \section{Method}
-        \begin{enumerate}
-            \item The micrometer was set to $\qty{5}{\mm}$. The mercury lamp was turned on.  
-            \item When looking down the telescope, an easily identifiable point was chosen and 50 lines passing that point were counted. The micrometer reading was then recorded.
-            \item This was repeated up until 300 lines passed that point in total. 
-        \end{enumerate}
+        \subsection{Mercury}
+            \begin{enumerate}
+                \item The micrometer was set to $\qty{5}{\mm}$. The mercury lamp was turned on.  
+                \item When looking down the telescope, an easily identifiable point was chosen and 50 lines passing that point were counted. The micrometer reading was then recorded.
+                \item This was repeated up until 500 lines passed that point in total. 
+            \end{enumerate}
+        \subsection{Sodium}
+            \begin{enumerate}
+                \item The mercury lamp was replaced by the sodium lamp. The sodium lamp was allowed to warm up.
+                \item A reference point was found where there was a thin dark ring and a thick dark ring. 
+                \item The micrometer was turned until the rings looked to be the same size and thickness as the reference image.
+            \end{enumerate}
+    \section{Results}
+        \subsection{Mercury wavelenght}
+            The graph of $n$ against $d$ produced a straight line, meaning the seperation of the mirrors scaled linearly with the $n$. By using the formula 
+                \[\lambda = \frac {2d}{n \cos(0)}\]
+            where $\frac {2d} n$ was determined using Excel's LINEST command. 
+                \[\lambda_{\text{Mercury}} = \qty{576E-9}{\m}\]
+        \subsection{Sodium doublet seperation}
+            2 measurements were taken for the sodium doublet seperation. Using the formula 
+                \[\Delta \lambda \approx \frac {\lambda^2}{2(d_2 - d_1)}\]
+            Where $\lambda$ is the average of the two sodium doublet wavelengths, a value of 
+                \[\Delta \lambda_{\text{Sodium}} = \qty{5.94E-10}{\m}\]
+            From the average of the two results.
+    \section{Error analysis}
+        Because of the limitations of the human eye and because of vibrations in the bench the optical table was placed on, $\Delta n = \pm 2$ fringes. The error on the micrometer was $\Delta d = \qty{0.01}{\mm} = \qty{0.01E-3}{\m}$. From the LINEST command $\Delta \frac {2d}{n} = \qty{6.86E-9}{\m}$. \\
+        Part of the error $\Delta(\Delta \lambda_{\text{Sodium}})$ is due to the judgment of the experimenters. For the purpose of analysis it was taken at $5\%$. 
+        \[\sigma = \frac {\abs{\qty{6.32E-10}{\m} - \qty{5.939E-10}{\m}} + \abs{\qty{5.556E-10}{\m} - \qty{5.939E-10}{\m}}} 2 = \qty{3.82E-11}{\m}\]
+            \[\Delta(\Delta \lambda_{\text{Sodium}}) = \frac {3.5 \cdot \qty{3.82E-11}{\m}}{\sqrt 2} = \qty{6.9E-11}{\m}\]
+    \section{Discussion}
+        The value for the wavelength of a mercury lamp was found to be outside of the acceptable range for measurment. This is likely because the actual conversion value for the equipment was given, instead of being measured. Each apparatus likely has differences that mean the conversion factor isn't constant between them. Based on the high $r^2$ value, it is possible the problem isn't with the measuremnets themselves but with the calibration factor.
+    \section{Conclusion}
+        By counting the interferance rings passing a poing the value for the wavlenght of a mercury lamp could've been determined. Due to the factors mentioned above, a value of $\qty{576(0.069)E-7}{\m}$ was determined, differing from the accepted value of $\qty{546.07}{\m}$[2].
+
+        The difference between the wavlengths in the sodium doublet was measured by matching two interferance patterns visually. It was suceessfully determined to be $\qty{5.94(0.69)E-11}{\m}$, compared to the accepted value of  $\qty{0.59(0.01)E-9}{\m}$ [3].
     \section{References}
     \begin{enumerate}
         \item R. Nave, \emph{Fabry-Perot Interferometer}, The Hyperphysics Textbook, accessed at https://www.hyperphysics.phy-astr.gsu.edu/hbase/hph.html
         \item National Institute of Standards and Technology, \\
         \emph{https://physics.nist.gov/PhysRefData/Handbook/Tables/mercurytable2.htm}
-        \item P. Juncar, J. Pinard, J. Hamon, A. Chartier, 1981, \emph{Absolute Determination of the Wavelengths of the Sodium D1 and D2 Lines by Using a CW Tunable Dye Laser Stabilized on Iodine}, Metrologia
-17, 77 (1981).
+        \item P. Juncar, J. Pinard, J. Hamon, A. Chartier, 1981, \emph{Absolute Determination of the Wavelengths of the Sodium D1 and D2 Lines by Using a CW Tunable Dye Laser Stabilized on Iodine}, Metrologia 17, 77 (1981).
     \end{enumerate}
 \end{document}
