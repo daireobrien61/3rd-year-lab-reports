@@ -1,4 +1,7 @@
 \documentclass{article}[12pt]
+
+% The format and core structure of this document is ripped directly from my second year lab report.
+
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xcolor}
@@ -37,13 +40,20 @@
 \newcommand{\reference}[3]{(#2, #3)\textsuperscript{\ref{#1}}} % For doing Harvard style referencing. Label should go at the bottom, reference at value being referenced.
 \newcommand{\thlineA}{\hline ~ & ~ & ~ & ~ & ~ \\[-2ex] } % The values in the table get squished when using the regular hline, this adds a small bit of extra space at the top by adding a phantom row with negative bottom spacing.
 \newcommand{\thline}{\hline ~ & ~ & ~ & ~ \\[-2ex] }
+\DeclarePairedDelimiter{\abs}{\lVert}{\rVert}
 
-
+\title{Determine the number of charge carriers in a Hall element}
+\author{Daire O'Brien \\ Department of Physics, NUIM Maynooth \and Edward Reid \\ Department of Physics, NUIM Maynooth}
+\date{Document last compiled \today \\
+Experimenet preformed on October 21, 2026}
 \begin{document}
+    \maketitle
     \section*{Abstract}
     \section{Introduction}
         \subsection{Background}
-
+            In 1879, based on the work by André-Marie Ampére and James Maxwell, physicist Edwin Hall investigted how magnetic fields interacted with an electrical current in a conductor. He proposed that 
+                \[E' \propto Mv\]
+            where $E' = V$, $M = \abs{\vec B}$ and "$v$ is the velocity of the electricity in the [object]". \reference{OriginalPaper}{E. H. Hall}{1879}
 
         \subsection{Theory}
             
@@ -51,7 +61,7 @@
     \section{Experiment}
         \subsection{Apparatus}
             \begin{itemize}
-
+                \item
             \end{itemize}
 
         \subsection{Method}
@@ -84,11 +94,11 @@
         
     \addcontentsline{toc}{section}{Notes}
     \section*{Notes}
-
+        No generative AI was used in the creation
     \addcontentsline{toc}{section}{References}
     \section*{References}
     %https://tex.stackexchange.com/questions/42905/enumerated-list-with-square-brackets
         \begin{enumerate}[label={[\arabic*]}]
-            \item
+            \item \label{OriginalPaper} ooh ee ahh ahh ahh
         \end{enumerate}
 \end{document}
